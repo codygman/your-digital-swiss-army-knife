@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       b9947513-e56f-4b52-9eb8-a058a8e9e30d
-:END:
-#+title: Luis
-#+category: Luis
-
-You know... Luis!
