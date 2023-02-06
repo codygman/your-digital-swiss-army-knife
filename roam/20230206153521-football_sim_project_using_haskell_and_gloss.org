@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       344a92fb-c8fb-48a4-ab21-f54a0bd091d0
+:END:
+#+title: football sim project using Haskell and gloss
+#+category: football sim project using Haskell and gloss
+
+* football sim project using Haskell and gloss project node
+:PROPERTIES:
+:ID:       102acfad-e1c7-4ef7-8df0-7c80bd4fedbc
+:END:

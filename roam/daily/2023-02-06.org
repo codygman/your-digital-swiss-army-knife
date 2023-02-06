@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       fe6f2fba-e48e-409c-8af9-8d1f60000010
+:END:
+#+title: 2023-02-06
+
+* bought [[id:0dea6502-2566-474b-a0a1-07ffd9c7566b][Retro Bowl]] and played it a bit, I wonder how much work it'd be to implement touch based passing in [[id:344a92fb-c8fb-48a4-ab21-f54a0bd091d0][football sim project using Haskell and gloss]]??
