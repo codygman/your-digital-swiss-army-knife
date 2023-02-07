@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       8b595ebb-af41-4c57-a2a6-98c5d34ea240
+:END:
+#+title: 2023-02-06
+
+* It's the weekend! I'm going to work on [[id:4f767407-12fc-4732-95fc-44157e7376a8][mini football sim]]!
+
+** actually one second.. didn't luis tell me to checkout some game realated to this?
+
+*** I don't remember the name.. I'll check my daily notes
+
+*** but wait.. I don't remember which day... I could search through them..  or
+
+*** we could look at the backlinks for luis!
+
+*** Ohh! it was [[id:38fc1f14-6eb7-4e74-97be-884266f2be4b][retro bowl]]! Time to buy it and play it, then see if there are any good ideas 

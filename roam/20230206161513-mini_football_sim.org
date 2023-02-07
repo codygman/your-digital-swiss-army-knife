@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       4f767407-12fc-4732-95fc-44157e7376a8
+:END:
+#+title: mini football sim
+#+category: mini football sim
+
+* project node
+:PROPERTIES:
+:ID:       a7010ba0-4acc-42e9-abfa-c0a4ea77e4dd
+:END:

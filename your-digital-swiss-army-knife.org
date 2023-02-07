@@ -1,3 +1,96 @@
-* 10 minutes
+  * First...
+:PROPERTIES:
+:ID:       dcb2bf70-520d-436d-b5ea-02efe2a51497
+:END:
 
-* 
+A STORY!
+
+* Uggh... football simulations suck... I should make a better one... in Haskell!
+
+* I know... let's finally get around to using =org-roam= to manage it!
+
+[[file:screencasts/1-creating-project-node-cloning-repo.mp4]]
+
+* Great, now we can revisit that project and rebuild it any time with =org-roam-node-find=
+
+* A few days go by, life happens, then Luis mentions "Retro Bowl" and I think about how it relates to the football sim project
+
+So I note that down by making some new nodes and linking to them from my daily journal.
+
+=NOTE:= for this demo I'll use the open yesterday function wherase you'd usually open todays
+
+[[file:screencasts/2-journal-about-luis-retro-bowl-link-football-sim-project.mp4]]
+
+* The next day I can finally work on the football sim, let's see what that looks like
+
+[[file:screencasts/3-weekend-comes-lets-pick-sim-game-back-up.mp4]]
+
+* The weekend comes and I'm ready to work on the football sim project
+
+When I get there, I first think to look at any backlinks for that node like this:
+
+[[file:screencasts/4-lets-actually-code-now.mkv]]
+
+* So what was the point of this?
+
+** This was to demonstrate a few things emacs and org-roam do that could be useful for you
+
+*** linked notes for persisting and recalling information
+
+*** "resumable projects"
+
+**** If I have to futz with build processes or even flaky docker containers... I'd just rather not do a side project... so Nix, direnv, and reproducible environments it is for me!
+
+*** a real world example of how note-taking and linking things are useful
+
+**** You might be able to see how little effort with something similar could give you a lot of value like it does for me
+
+* slide settings                                                    :ARCHIVE:
+
+
+#+begin_src emacs-lisp
+;; Install visual-fill-column
+(unless (package-installed-p 'visual-fill-column)
+  (package-install 'visual-fill-column))
+
+;; Configure fill width
+(setq visual-fill-column-width 110
+      visual-fill-column-center-text t)
+
+(defun my/org-present-start ()
+  ;; Center the presentation and wrap lines
+  (visual-fill-column-mode 1)
+  (visual-line-mode 1))
+
+(defun my/org-present-end ()
+  ;; Stop centering the document
+  (visual-fill-column-mode 0)
+  (visual-line-mode 0))
+
+;; Register hooks with org-present
+(add-hook 'org-present-mode-hook 'my/org-present-start)
+(add-hook 'org-present-mode-quit-hook 'my/org-present-end)
+
+
+;; Tweak font sizes
+(setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
+                                   (header-line (:height 4.0) variable-pitch)
+                                   (org-document-title (:height 1.75) org-document-title)
+                                   (org-code (:height 1.55) org-code)
+                                   (org-verbatim (:height 1.55) org-verbatim)
+                                   (org-block (:height 1.25) org-block)
+                                   (org-block-begin-line (:height 0.7) org-block)))
+
+;; Install doom-themes
+(unless (package-installed-p 'doom-themes)
+  (package-install 'doom-themes))
+
+;; Load up doom-palenight for the System Crafters look
+(load-theme 'doom-palenight t)
+;; (org-present-hide-cursor)
+;; (hide-mode-line-mode)
+#+end_src
+
+#+RESULTS:
+: t
+

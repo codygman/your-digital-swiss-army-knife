@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       38fc1f14-6eb7-4e74-97be-884266f2be4b
+:END:
+#+title: retro bowl
+#+category: retro bowl
+
