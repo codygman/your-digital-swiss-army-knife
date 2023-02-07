@@ -1,7 +1,25 @@
-  * First...
+* First... 
 :PROPERTIES:
 :ID:       dcb2bf70-520d-436d-b5ea-02efe2a51497
 :END:
+
+some setup 🫤
+
+TODO gif of setup
+
+Download emacs:
+
+https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html
+
+Download discoverable emacs
+
+#+begin_src sh :dir ~
+  git clone https://github.com/codygman/discoverable-emacs.git
+  cd discoverable-emacs
+  emacs --user-init=.
+#+end_src
+
+* Now
 
 A STORY!
 
