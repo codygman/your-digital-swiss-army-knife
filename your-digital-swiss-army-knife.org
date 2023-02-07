@@ -17,7 +17,7 @@ Download discoverable emacs
   # git clone git@github.com:codygman/your-digital-swiss-army-knife.git
   git clone https://github.com/codygman/discoverable-emacs.git
   cd discoverable-emacs
-  emacs --user-init=.
+  emacs --init-directory=.
 #+end_src
 
 * Now
