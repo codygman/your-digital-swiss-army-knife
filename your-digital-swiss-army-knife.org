@@ -5,16 +5,13 @@
 
 some setup 🫤
 
-TODO gif of setup
-
 Download emacs:
 
 https://www.gnu.org/savannah-checkouts/gnu/emacs/emacs.html
 
-Download discoverable emacs
+Download discoverable emacs:
 
-#+begin_src sh :dir ~
-  # git clone git@github.com:codygman/your-digital-swiss-army-knife.git
+#+begin_src sh :dir 
   git clone https://github.com/codygman/discoverable-emacs.git
   cd discoverable-emacs
   emacs --init-directory=.
@@ -28,7 +25,7 @@ A STORY!
 
 * I know... let's finally get around to using =org-roam= to manage it!
 
-[[file:screencasts/1-creating-project-node-cloning-repo.mp4]]
+[[elisp:(start-process "mpv" "*mpv*" "mpv" "--fs" "screencasts/1-creating-project-node-cloning-repo.mp4")][file:screencasts/1-creating-project-node-cloning-repo.mp4]]
 
 * Great, now we can revisit that project and rebuild it any time with =org-roam-node-find=
 
@@ -36,19 +33,19 @@ A STORY!
 
 So I note that down by making some new nodes and linking to them from my daily journal.
 
-=NOTE:= for this demo I'll use the open yesterday function wherase you'd usually open todays
+=NOTE:= for this demo I'll use the open yesterday function wheras you'd usually open todays
 
-[[file:screencasts/2-journal-about-luis-retro-bowl-link-football-sim-project.mp4]]
+[[elisp:(start-process "mpv" "*mpv*" "mpv" "--fs" "screencasts/2-journal-about-luis-retro-bowl-link-football-sim-project.mp4")][file:screencasts/2-journal-about-luis-retro-bowl-link-football-sim-project.mp4]]
 
-* The next day I can finally work on the football sim, let's see what that looks like
+* The next day I want to work on the football sim, let's see what that looks like
 
-[[file:screencasts/3-weekend-comes-lets-pick-sim-game-back-up.mp4]]
+[[elisp:(start-process "mpv" "*mpv*" "mpv" "--fs" "screencasts/3-weekend-comes-lets-pick-sim-game-back-up.mp4")][file:screencasts/3-weekend-comes-lets-pick-sim-game-back-up.mp4]]
 
 * The weekend comes and I'm ready to work on the football sim project
 
 When I get there, I first think to look at any backlinks for that node like this:
 
-[[file:screencasts/4-lets-actually-code-now.mkv]]
+[[elisp:(start-process "mpv" "*mpv*" "mpv" "--fs" "screencasts/4-lets-actually-code-now.mkv")][file:screencasts/4-lets-actually-code-now.mkv]]
 
 * So what was the point of this?
 
@@ -64,52 +61,92 @@ When I get there, I first think to look at any backlinks for that node like this
 
 **** You might be able to see how little effort with something similar could give you a lot of value like it does for me
 
+* Fin
+
+Questions? Comments?
+
+Feel free to pair with me any time to try this out! 😀
+
 * slide settings                                                    :ARCHIVE:
 
 
 #+begin_src emacs-lisp
-;; Install visual-fill-column
-(unless (package-installed-p 'visual-fill-column)
-  (package-install 'visual-fill-column))
+          ;; Install visual-fill-column
+          (unless (package-installed-p 'visual-fill-column)
+            (package-install 'visual-fill-column))
 
-;; Configure fill width
-(setq visual-fill-column-width 110
-      visual-fill-column-center-text t)
+          ;; Configure fill width
+        (setq visual-fill-column-width 110
+              visual-fill-column-center-text t)
 
-(defun my/org-present-start ()
-  ;; Center the presentation and wrap lines
-  (visual-fill-column-mode 1)
-  (visual-line-mode 1))
+          (defun my/org-present-start ()
+            ;; Center the presentation and wrap lines
+            (visual-fill-column-mode 1)
+            (visual-line-mode 1))
 
-(defun my/org-present-end ()
-  ;; Stop centering the document
-  (visual-fill-column-mode 0)
-  (visual-line-mode 0))
+          (defun my/org-present-end ()
+            ;; Stop centering the document
+            (visual-fill-column-mode 0)
+            (visual-line-mode 0))
 
-;; Register hooks with org-present
-(add-hook 'org-present-mode-hook 'my/org-present-start)
-(add-hook 'org-present-mode-quit-hook 'my/org-present-end)
+          ;; Register hooks with org-present
+          (add-hook 'org-present-mode-hook 'my/org-present-start)
+          (add-hook 'org-present-mode-quit-hook 'my/org-present-end)
 
 
-;; Tweak font sizes
-(setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
-                                   (header-line (:height 4.0) variable-pitch)
-                                   (org-document-title (:height 1.75) org-document-title)
-                                   (org-code (:height 1.55) org-code)
-                                   (org-verbatim (:height 1.55) org-verbatim)
-                                   (org-block (:height 1.25) org-block)
-                                   (org-block-begin-line (:height 0.7) org-block)))
+          ;; Tweak font sizes
+          (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
+                                             (header-line (:height 4.0) variable-pitch)
+                                             (org-document-title (:height 1.75) org-document-title)
+                                             (org-code (:height 1.55) org-code)
+                                             (org-verbatim (:height 1.55) org-verbatim)
+                                             (org-block (:height 1.25) org-block)
+                                             (org-block-begin-line (:height 0.7) org-block)))
 
-;; Install doom-themes
-(unless (package-installed-p 'doom-themes)
-  (package-install 'doom-themes))
+          ;; Install doom-themes
+          (unless (package-installed-p 'doom-themes)
+            (package-install 'doom-themes))
 
-;; Load up doom-palenight for the System Crafters look
-(load-theme 'doom-palenight t)
-;; (org-present-hide-cursor)
-;; (hide-mode-line-mode)
+          ;; Load up doom-palenight for the System Crafters look
+          (load-theme 'doom-palenight t)
+
+          (unless (package-installed-p 'doom-themes)
+    (package-install 'hide-mode-line)
+      )
+           (hide-mode-line-mode)
+
+
+    (defun org-hide-properties ()
+    "Hide all org-mode headline property drawers in buffer. Could be slow if it has a lot of overlays."
+    (interactive)
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward
+              "^ *:properties:\n\\( *:.+?:.*\n\\)+ *:end:\n" nil t)
+        (let ((ov_this (make-overlay (match-beginning 0) (match-end 0))))
+          (overlay-put ov_this 'display "")
+          (overlay-put ov_this 'hidden-prop-drawer t))))
+    (put 'org-toggle-properties-hide-state 'state 'hidden))
+
+  (defun org-show-properties ()
+    "Show all org-mode property drawers hidden by org-hide-properties."
+    (interactive)
+    (remove-overlays (point-min) (point-max) 'hidden-prop-drawer t)
+    (put 'org-toggle-properties-hide-state 'state 'shown))
+
+  (defun org-toggle-properties ()
+    "Toggle visibility of property drawers."
+    (interactive)
+    (if (eq (get 'org-toggle-properties-hide-state 'state) 'hidden)
+        (org-show-properties)
+      (org-hide-properties)))
+
+  (setq org-confirm-babel-evaluate nil)
+  (setq org-link-elisp-confirm-function nil)
+
+          ;; (org-present-hide-cursor)
+          ;; (hide-mode-line-mode)
 #+end_src
 
 #+RESULTS:
-: t
 
